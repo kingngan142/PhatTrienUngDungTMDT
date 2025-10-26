@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2. Trang giới thiệu cá nhân</title>
+</head>
+
+<body>
+
+    <!-- 1 banner có hình ảnh. Sử dụng thẻ <div> và <img>. -->
+    <div id="banner-area">
+        <img src="buoi3_bai2_banner.jpg" alt="Ảnh Banner Giới Thiệu" width="100%">
+    </div>
+
+    <!-- 1 menu liên kết đến các trang khác (Home, About, Contact). Sử dụng thẻ <div> và <a>. -->
+    <div id="navigation-menu">
+        [ <a href="home.html">Home</a> ]
+        [ <a href="about.html">About</a> ]
+        [ <a href="contact.html">Contact</a> ]
+    </div>
+
+    <hr>
+    
+    <!-- 1 khung nội dung chia 2 cột. Sử dụng thẻ <div> để tạo khung chứa. -->
+    <div id="main-content-container">
+         
+        <table width="80%" border="0" cellpadding="20" cellspacing="0" align="center">
+            <tr>
+                <!-- Cột trái: ảnh đại diện. Sử dụng thẻ <td> và <img>. -->
+                <td width="30%" valign="top">
+
+                    <h3>Ảnh Đại Diện</h3>
+                    <img src="tatacooky.jpg" alt="Ảnh đại diện cá nhân" width="150" height="150" border="1">
+                </td>
+
+                <!-- Cột phải: thông tin cá nhân. Sử dụng thẻ <td> và <table>. -->
+                <td width="70%" valign="top">
+                    <h3>Thông Tin Cá Nhân</h3>
+                    <!-- Thông tin cá nhân (họ tên, lớp, sở thích). Dùng thẻ <table>. -->
+                    <table border="1" cellpadding="10" cellspacing="0" width="100%">
+                        <tr>
+                            <td width="30%"><strong>Họ Tên:</strong></td>
+                            <td>Nguyễn Thị Kim Ngân</td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><strong>Ngành:</strong></td>
+                            <td>Thương mại điện tử</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lớp:</strong></td>
+                            <td>EEP001</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sở Thích:</strong></td>
+                            <td>Nghe nhạc K-pop và bơi lội</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <br>
+    <br>
+    
+    <!-- Footer chứa thông tin bản quyền. Sử dụng thẻ <footer>. -->
+    <footer>
+        <p align="center" style="color: gray;">&copy; 2025 - Bản quyền thuộc về Ngân Nguyễn. (Footer)</p>
+    </footer>
+
+</body>
+</html>
