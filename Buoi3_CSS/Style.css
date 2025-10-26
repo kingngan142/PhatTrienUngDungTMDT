@@ -1,0 +1,29 @@
+/* Dùng cho các thẻ class="main-title" */
+.main-title {
+    font-size: 2.5em;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Dùng cho các thẻ <section> */
+section {
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* Dùng cho các chi tiết cá nhân */
+.detail-item {
+    padding: 5px;
+    margin-left: 10px;
+    border-left: 3px solid #3498db;  
+}
+
+/* Dùng cho các tiêu đề khóa học */
+.course-title {
+    font-size: 1.1em;
+    color: #c0392b; 
+    font-weight: bold;
+}
