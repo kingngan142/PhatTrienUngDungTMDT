@@ -1,0 +1,201 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffe6eb, #ffd6e0, #ffc2d4);  
+    color: #5b1a2f;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto; /* Canh giữa nội dung */
+    padding: 20px;
+}
+
+/* Menu */
+.nav-bar {
+    background-color: #e63b7a; 
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;  
+}
+
+.nav-list {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-item {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 8px 15px;  
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #d62e6b;  
+}
+
+/* Header */
+.header-content {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;  
+    border-bottom: 2px solid #f78ca0;
+}
+
+.main-title {
+    font-size: 2.8em;
+    color: #e63b7a;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(230, 59, 122, 0.3);
+}
+
+/* Section Headings */
+.section-heading {
+    color: #d72a6a;
+    border-left: 5px solid #f78ca0;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+/* Nội dung Section */
+section {
+    background: #fff0f5;
+    padding: 30px;  
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(255, 143, 167, 0.25);
+    margin-bottom: 40px;  
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #ffbcd5; 
+}
+
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(255, 143, 167, 0.35);
+}
+
+.personal-details, .education-experience, .hobby-item {
+    margin-left: 20px; /* Canh lề (Margin) */
+    padding-left: 15px; /* Padding */
+}
+
+.detail-item {
+    margin-bottom: 8px;
+    font-size: 1.05em;
+}
+
+.contact-email {
+    color: #e63b7a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-email:hover {
+    text-decoration: underline;
+}
+
+.education-experience {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff9bb3;
+    box-shadow: 0 2px 8px rgba(255, 143, 167, 0.15);
+}
+
+.course-title {
+    color: #d62e6b;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.hobby-item {
+    background: linear-gradient(145deg, #ffe5ec, #ffd1dc);
+    border-radius: 18px;
+    box-shadow: 0 3px 10px rgba(255, 143, 167, 0.2);
+}
+
+.hobby-title {
+    color: #e63b7a;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.music-list, .sports-list {
+    margin-left: 20px;
+    color: #7a3b53;
+}
+
+/* Divider */
+hr {
+    border: none;
+    height: 1.5px;
+    background: linear-gradient(to right, #fba7c2, #ffbcd5, #ffdce7);
+    margin: 40px 0;
+    border-radius: 1px;
+}
+
+/* Footer */
+.footer-content {
+    text-align: center;
+    padding: 25px;
+    background: #ffe6ed;
+    border-radius: 16px 16px 0 0; /* Thiết kế nhất quán */
+    box-shadow: 0 -2px 10px rgba(255, 143, 167, 0.25);
+    color: #7a2a45;
+    margin-top: 40px;
+}
+
+.social-links a { /* Liên kết mạng xã hội */
+    color: #e63b7a;
+    font-size: 1.5em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #d62e6b;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 0.95em;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .main-title {
+        font-size: 2em;
+    }
+    .section-heading {
+        font-size: 1.3em;
+    }
+    .nav-item {
+        display: block;
+        margin: 5px 0;
+    }
+}
