@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5. CSS định dạng văn bản</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background-color: #FDF5F5; 
+            font-family: 'Poppins', Segoe UI, sans-serif; 
+            color: #333333;
+            line-height: 1.7;  
+            padding: 40px 20px;
+            text-rendering: optimizeLegibility;
+        }
+
+        h1 {
+            color: #E91E63;  
+            text-transform: uppercase; 
+            text-align: center; 
+            font-size: 3em; 
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .description-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px;           
+            color: #333333; 
+            background-color: #FFFFFF;  
+            border-radius: 10px;  
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);  
+        }
+
+        .song-paragraph {
+            text-align: justify; 
+            text-indent: 50px; 
+            font-size: 1.15em;
+        }
+
+        .song-highlight {
+            text-decoration: underline solid #FF70A6; 
+            font-style: italic; 
+            font-weight: 700;
+            color: #E91E63;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Yapping about BTS songs</h1>
+
+    <div class="description-container">
+        <h2>Permission to Dance</h2>
+        
+        <p class="song-paragraph">
+            Bài hát <span class="song-highlight">Permission to Dance</span> của nhóm nhạc toàn cầu BTS không chỉ là một ca khúc Pop thông thường, mà còn là một bản tuyên ngôn về niềm hy vọng và sự lạc quan. Được phát hành vào năm 2021, giữa thời điểm thế giới đang phải đối mặt với nhiều khó khăn, bài hát mang đến một thông điệp mạnh mẽ và tích cực: "Bạn không cần sự cho phép của bất kỳ ai để nhảy múa và tận hưởng cuộc sống." Giai điệu tươi sáng, sôi động và dễ nghe, cùng với vũ đạo vui tươi, lập tức tạo ra một cơn sốt trên toàn thế giới. Đây là một ca khúc hoàn hảo để xua tan mọi mệt mỏi và nhắc nhở chúng ta rằng, hạnh phúc là một quyền cơ bản và mọi người đều có quyền sống trọn vẹn với chính mình, bất kể hoàn cảnh. Nó thực sự là một nguồn năng lượng tích cực không bao giờ cạn đối với cộng đồng ARMY và công chúng.
+        </p>
+    </div>
+
+</body>
+</html>
