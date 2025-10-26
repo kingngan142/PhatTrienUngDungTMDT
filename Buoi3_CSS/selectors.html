@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6. CSS selector nâng cao</title>
+    
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* ----------------------------------------------------
+         * 1. Bộ chọn Phần tử (Element Selector)
+         * ---------------------------------------------------- */
+
+        h1 {
+            color: #2c3e50; /* Xanh đậm */
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* ----------------------------------------------------
+         * 2. Bộ chọn Lớp (Class Selector)
+         * ---------------------------------------------------- */
+
+        .highlight {
+            background-color: #f1c40f; /* Màu vàng */
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        /* ----------------------------------------------------
+         * 3. Bộ chọn ID (ID Selector)
+         * ---------------------------------------------------- */
+
+        #menu {
+            list-style-type: none;
+            padding: 10px;
+            background-color: #3498db; /* Màu xanh dương */
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        #menu li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        #menu a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* ----------------------------------------------------
+         * 4. Bộ chọn Thuộc tính (Attribute Selector)
+         * ---------------------------------------------------- */
+
+        input[type="text"] {
+            border: 2px solid #e74c3c; /* Màu đỏ */
+            padding: 8px;
+            border-radius: 5px;
+            background-color: #fcfcfc;
+        }
+        
+        input[type="submit"] {
+            background-color: #2ecc71; /* Màu xanh lá */
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* ----------------------------------------------------
+         * 5. Bộ chọn Con Trực Tiếp (Child Selector: div > p)
+         * ---------------------------------------------------- */
+
+        div > p {
+            font-style: italic;
+            color: #8e44ad; /* Màu tím */
+            border-left: 4px solid #8e44ad;
+            padding-left: 10px;
+        }
+        
+        /* ----------------------------------------------------
+         * 6. Bộ chọn Giả (Pseudo-class Selector)
+         * ---------------------------------------------------- */
+
+        a:hover {
+            text-decoration: underline;
+            color: #e67e22 !important; /* Màu cam */
+        }
+
+        .content-box p:first-child {
+            font-weight: bold;
+            background-color: #ecf0f1; /* Nền xám nhạt */
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Minh Họa Các Loại CSS Selector (Bộ chọn Phần tử)</h1>
+
+    <div class="content-box">
+        <h2>1. Bộ chọn Giả (p:first-child)</h2>
+        <!-- Đây là p:first-child của div.content-box -->
+        <p>Đoạn văn này là <span class="highlight">con đầu tiên</span> của hộp nội dung (p:first-child).</p> 
+        <p>Đoạn văn này là con thứ hai, không bị ảnh hưởng bởi p:first-child.</p>
+    </div>
+    
+    <hr>
+
+    <h2>2. Bộ chọn Lớp (.highlight)</h2>
+    <p>Chỉ từ ngữ này <span class="highlight">ĐƯỢC ĐỊNH DẠNG</span> bằng bộ chọn lớp.</p>
+
+    <hr>
+
+    <h2>3. Bộ chọn ID (#menu) và Giả lớp (:hover)</h2>
+    <!-- Bộ chọn ID áp dụng định dạng background và màu chữ cho toàn bộ menu -->
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li>
+            <!-- Bộ chọn Giả (a:hover) sẽ thay đổi màu khi di chuột qua -->
+            <a href="#" style="color: yellow;">Contact (Di chuột qua để xem :hover)</a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>4. Bộ chọn Con Trực Tiếp (div > p)</h2>
+    <div class="parent-div">
+        <!-- Đoạn văn này là con trực tiếp của div -->
+        <p>Đoạn văn này được định dạng bằng selector: <span class="highlight">div > p</span>.</p> 
+        <div>
+            <!-- Đoạn văn này KHÔNG phải là con trực tiếp của div ngoài cùng -->
+            <p>Đoạn văn này nằm trong một div lồng, nên không bị ảnh hưởng bởi div > p.</p> 
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>5. Bộ chọn Thuộc tính (input[type="..."])</h2>
+    <form>
+        <label>Tên người dùng:</label>
+        <!-- Bộ chọn thuộc tính input[type="text"] sẽ định dạng input này -->
+        <input type="text" placeholder="Nhập tên..." value="Đây là Input Text">
+        
+        <br><br>
+        
+        <label>Mật khẩu:</label>
+        <!-- Input này không phải type="text" nên không bị ảnh hưởng -->
+        <input type="password" placeholder="Mật khẩu..."> 
+        
+        <br><br>
+        
+        <!-- Bộ chọn thuộc tính input[type="submit"] sẽ định dạng nút này -->
+        <input type="submit" value="Gửi Dữ Liệu">
+    </form>
+
+</body>
+</html>
