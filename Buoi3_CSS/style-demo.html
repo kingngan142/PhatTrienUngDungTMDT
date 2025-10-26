@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4. CSS nội tuyến, trong và ngoài</title>
+
+    <!-- EXTERNAL CSS - Liên kết đến file style.css -->
+    <link rel="stylesheet" href="style.css"> 
+
+    <!-- INTERNAL CSS - Thẻ <style> trong phần <head> -->
+    <style>
+        /* Internal CSS: Chỉnh màu nền và font chữ cho toàn bộ body */
+        body {
+            background-color: #f0f0f0;  
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Internal CSS: Định dạng cho tiêu đề phụ */
+        .section-heading {
+            border-bottom: 2px solid #555;
+            padding-bottom: 5px;
+            color: #1e8449;  
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-content">
+        <!-- INLINE CSS - Thuộc tính style="..." đổi màu chữ thành đỏ -->
+        <h1 class="main-title" style="color: #FF0000; text-decoration: underline;">
+            INTRODUCTION 
+        </h1>
+    </header>
+
+    <!-- External CSS sẽ ảnh hưởng đến phần này -->
+    <section class="basic-info">
+        <h2 class="section-heading">Basic Information</h2>
+        
+        <div class="personal-details">
+            <p class="detail-item"><strong>Name:</strong> Nicole Nguyen </p>
+            <p class="detail-item"><strong>Birthday:</strong> 14/02/2005</p>
+        </div>
+    </section>
+
+    <hr> 
+
+    <!-- Internal CSS sẽ ảnh hưởng đến h2 -->
+    <section class="education-dev">
+        <h2 class="section-heading">Study & Development</h2>
+        
+        <!-- Các phần tử này được định dạng bởi External CSS -->
+        <div class="education-experience">
+            <h3 class="course-title">University of Economics Ho Chi Minh City</h3>
+            <p class="major-field"> Major: E-commerce</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <footer class="footer-content">
+        <p class="copyright">&copy; 2025 - Nicole Nguyen.</p>
+    </footer>
+
+</body>
+</html>
