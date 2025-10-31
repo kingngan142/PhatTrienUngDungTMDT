@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="todo-app-container">
+        <h1>Danh sách công việc</h1>
+        
+        // 1. Menu bộ lọc
+        <div class="filter-menu">
+            // Tất cả: Toàn bộ danh sách công việc, bất kể trạng thái (hoàn thành, chưa hoàn thành hoặc quá hạn)
+            <div class="filter-option" id="filter-all" data-filter="all">
+                <span class="icon"> </span> Tất cả
+            </div>
+            // Đã hoàn thành: Các công việc đã được đánh dấu là hoàn thành
+            <div class="filter-option" id="filter-completed" data-filter="completed">
+                <span class="icon"> </span> Đã hoàn thành
+            </div>
+            // Quá hạn: Các công việc chưa hoàn thành và đã vượt quá thời hạn chót
+            <div class="filter-option" id="filter-overdue" data-filter="overdue">
+                <span class="icon"> </span> Quá hạn
+            </div>
+            // Chưa hoàn thành: Các công việc chưa hoàn thành và vẫn còn trong thời hạn cho phép
+            <div class="filter-option active" id="filter-uncompleted" data-filter="uncompleted">
+                <span class="icon"> </span> Chưa hoàn thành
+            </div>
+        </div>
+
+        // 2. Ô nhập tên và thời hạn của công việc, nút Thêm công việc 
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Nhập tên công việc...">
+            <input type="date" id="deadlineInput" title="Ngày đến hạn">
+            <button id="addTaskBtn">Thêm</button>
+        </div>
+        
+        // 3. Ô nhập mô tả công việc 
+        <input type="text" id="noteInput" placeholder="Thêm ghi chú (tùy chọn)..." class="note-input">
+        
+        // 4. Thông báo hiển thị khi danh sách công việc trống
+        <p id="emptyMessage"></p> 
+
+        // 5. Danh sách các mục công việc 
+        <ul id="taskList">
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
