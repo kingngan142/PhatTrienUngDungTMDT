@@ -1,0 +1,297 @@
+/* --- Toàn bộ trang --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    min-height: 100vh;
+    margin: 0;
+    color: #3E2723; 
+    padding: 20px;
+}
+
+
+
+/* --- Khung chứa ứng dụng To-do List --- */
+.todo-app-container {
+    display: flex;
+    flex-direction: column;  
+    width: 90%;
+    max-width: 650px;  
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+
+
+/* --- Tiêu đề & Nội dung --- */
+h1 {
+    color: #3E2723;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    text-align: center;
+}
+
+
+
+/* --- Menu lọc --- */
+/* Bố cục cho các nút lọc */
+.filter-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; 
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+/* Định kiểu cho từng nút lọc */
+.filter-option {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    background-color: #FAFAFA;
+    border: 1px solid #E0E0E0;
+    color: #3E2723;
+}
+
+/* Chỉnh icon bên trong nút lọc */
+.filter-option .icon {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Hiệu ứng khi di chuột qua nút lọc */
+.filter-option:hover {
+    background-color: #EFEBE9; 
+}
+
+.filter-option.active {
+    background-color: #3E2723; 
+    color: #F4C9D6;
+    font-weight: bold;
+    border-color: #3E2723;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* --- Phần nhập liệu --- */
+/* Bố cục cho ô nhập tên công việc, ô ngày và nút Thêm */
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Định kiểu chung cho các ô nhập liệu (tên công việc, ngày và ghi chú) */
+#taskInput, #deadlineInput, #noteInput { 
+    padding: 12px 15px;
+    border: 1px solid #D1D1D6;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Quan trọng để padding không làm tăng chiều rộng */
+    color: #3E2723;
+}
+
+/* Cho ô nhập tên công việc chiếm nhiều không gian hơn */
+#taskInput {
+    flex-grow: 2;
+}
+
+/* Ô chọn ngày */
+#deadlineInput {
+    max-width: 150px;
+    flex-grow: 1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Nút thêm công việc */
+#addTaskBtn {
+    background-color: #5D4037;  
+    color: #F4C9D6;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+/* Hiệu ứng khi di chuột qua nút thêm công việc */
+#addTaskBtn:hover {
+    background-color: #3E2723; 
+}
+
+/* Ô ghi chú */
+#noteInput {  
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+
+
+/* --- Danh sách công việc --- */
+/* Bỏ dấu đầu dòng mặc định cho đẹp */
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+/* --- Một công việc trong danh sách công việc --- */
+/* Định kiểu cho mỗi mục công việc */
+#taskList li {
+    background: #FFF;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start;
+    transition: background-color 0.2s;
+    border-left: 5px solid #F4C9D6; 
+}
+
+
+
+/* --- Ô tròn để tick hoàn thành công việc ---*/
+/* Định kiểu cho mỗi ô tròn */
+.checkbox-btn {
+    appearance: none; 
+    width: 22px;  
+    height: 22px;
+    border: 2px solid #8D6E63;
+    border-radius: 50%;
+    margin-right: 18px;
+    cursor: pointer;
+    position: relative;
+    top: 2px; 
+    flex-shrink: 0;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Ô tròn sau khi được tick */
+.checkbox-btn:checked {
+    background-color: #5D4037;
+    border-color: #5D4037;
+}
+
+/* Thêm dấu "✓" khi ô tròn được tick */
+.checkbox-btn:checked::after {
+    content: '✓';
+    color: #F4C9D6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    line-height: 1;
+}
+
+
+
+/* --- Chi tiết công việc ---*/
+/* Phần chứa tên, deadline và ghi chú */
+.task-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bố cục tên và thời hạn */
+.task-main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* Kiểu cho tên công việc */ 
+.task-text {
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    font-size: 1.1em;
+    word-break: break-word; /* Ngắt từ dài */
+    max-width: 80%; 
+}
+
+/* Kiểu cho thời hạn */ 
+.task-deadline {
+    font-size: 0.9em;
+    color: #8D6E63; 
+    font-weight: 500;
+    flex-shrink: 0; 
+}
+
+/*  Kiểu cho ghi chú */
+.task-note {
+    font-size: 0.85em;
+    color: #A1887F; 
+    margin-top: 5px;
+    padding-left: 0;
+    border-left: 3px solid #EFEBE9;
+    padding-left: 10px;
+    font-style: italic;
+    white-space: pre-wrap; 
+}
+
+
+
+/* --- Nút xóa công việc --- */
+/* Kiểu cho nút xóa */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #E57373; 
+    font-size: 1.4em;
+    cursor: pointer;
+    padding: 0 5px;
+    margin-left: 15px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+    align-self: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Hiệu ứng khi di chuột qua nút xóa */
+.delete-btn:hover {
+    color: #D32F2F;
+}
+
+
+
+/* --- Trạng thái công việc đã hoàn thành --- */
+/* Mục công việc khi đã hoàn thành */
+.completed {
+    background-color: #F9F9F9;
+    border-left: 5px solid #A1887F;
+}
+
+/* Gạch ngang tên công việc đã hoàn thành */
+.completed .task-text {
+    text-decoration: line-through;
+    color: #A1887F; 
+    font-weight: 400;
+}
+
+/* Đổi màu chữ thời hạn và ghi chú của công việc đã hoàn thành */
+.completed .task-deadline, .completed .task-note {
+    color: #BCAAA4;
+}
